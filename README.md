@@ -94,3 +94,10 @@ CREATE INDEX new_or_handled_tasks ON tasks (status) WHERE status IN ('NEW', 'PRO
 - [Kafka](https://kafka.apache.org/)
 - REST API
 - [Swagger](https://swagger.io/)
+
+## TODO
+
+1. Сборка и запуск приложения через Docker, включить сервис в Compose.
+2. Автоматическое создание Kafka топика.
+3. Добавить функционал миграций PSQL через Liquibase.
+4. Отправка невалидных сообщений из Kafka в DLQ (dead letter queue) для последующего ручного разбора.
