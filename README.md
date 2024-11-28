@@ -62,11 +62,16 @@ docker compose up
 
 Будут подняты контейнеры: Kafka, Kafka-UI и PostgreSQL.
 
-2. Создание топика Kafka
+2. Для Kafka внести измененениия в файл /etc/hosts
+
+Необходимо добавить в /etc/hosts:
+`kafka 127.0.0.1`
+
+3. Создание топика Kafka
 
 Через [Kafka UI](http://localhost:9999) создать топик `tasks` (partitions=1, replicationFactor=1).
 
-3. Создание схемы БД
+4. Создание схемы БД
 
 Подключиться к `tasks-db` БД (уже создана Docker) по localhost:5433 (postgres/postgres) и создать схему:
 
@@ -85,7 +90,7 @@ CREATE TABLE tasks
 CREATE INDEX new_or_handled_tasks ON tasks (status) WHERE status IN ('NEW', 'PROCESSING');
 ```
 
-4. Запустить приложение
+5. Запустить приложение
 
 ## Технологии
 - [SpringBoot](https://spring.io/projects/spring-boot/)
