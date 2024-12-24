@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file:
+        v.1.0/create-enum-status.yaml
+      relativeToChangelogFile: true
+  - include:
+      file:
+        v.1.0/create-table-tasks.yaml
+      relativeToChangelogFile: true
+
+

@@ -39,8 +39,8 @@ public class TaskService {
     }
 
 
-    @KafkaListener(id = "Task", topics = {"tasks"}, containerFactory = "singleFactory")
-    public void consume(TaskDto dto)throws Exception {
+    @KafkaListener(id = "Task", topics = {"${kafka.group.id}"}, containerFactory = "singleFactory")
+    public void consume(TaskDto dto) {
         log.info("=> consumed {}", writeValueAsString(dto));
         if (!Util.valid(dto)) {
             log.info("Invalid task skipped: " + dto);

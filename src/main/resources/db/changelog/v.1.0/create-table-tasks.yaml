@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-tasks
+      author: Olga
+      changes:
+        - createTable:
+            tableName: tasks
+            columns:
+              - column:
+                  name: name
+                  type: varchar(128)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: duration_ms
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: status
+                  defaultValue: 'NEW'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamptz
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: updated_at
+                  type: timestamptz
+                  defaultValue: now()
+                  constraints:
+                    nullable: false

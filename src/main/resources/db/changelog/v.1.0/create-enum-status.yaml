@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-enum-status
+      author: Olga
+      changes:
+        - sql: CREATE TYPE status AS ENUM ('NEW', 'PROCESSING', 'DONE')

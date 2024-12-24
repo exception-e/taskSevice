@@ -1,7 +1,4 @@
 spring:
-  kafka:
-    bootstrap-servers: localhost:9092
-
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5433/tasks-db
@@ -15,6 +12,10 @@ spring:
       properties:
         hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
         hibernate.temp.use_jdbc_metadata_defaults: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
 
 app:
   poolSize: 10
