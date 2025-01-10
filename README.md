@@ -71,31 +71,13 @@ docker compose up
 
 Через [Kafka UI](http://localhost:9999) создать топик `tasks` (partitions=1, replicationFactor=1).
 
-4. Создание схемы БД
-
-Подключиться к `tasks-db` БД (уже создана Docker) по localhost:5433 (postgres/postgres) и создать схему:
-
-```SQL
-CREATE TYPE status AS ENUM ('NEW', 'PROCESSING', 'DONE');
-
-CREATE TABLE tasks
-(
-    name        VARCHAR(128) PRIMARY KEY,
-    duration_ms INTEGER   NOT NULL,
-    status      status  NOT NULL DEFAULT 'NEW'::status,
-    created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
-    updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-
-CREATE INDEX new_or_handled_tasks ON tasks (status) WHERE status IN ('NEW', 'PROCESSING');
-```
-
-5. Запустить приложение
+4. Запустить приложение
 
 ## Технологии
 - [SpringBoot](https://spring.io/projects/spring-boot/)
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Liqiubase](https://www.liquibase.com/)
 - [Kafka](https://kafka.apache.org/)
 - REST API
 - [Swagger](https://swagger.io/)
