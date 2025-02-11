@@ -77,10 +77,11 @@ docker compose up
 - [SpringBoot](https://spring.io/projects/spring-boot/)
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa/)
 - [PostgreSQL](https://www.postgresql.org/)
-- [Liqiubase](https://www.liquibase.com/)
+- [Liquibase](https://www.liquibase.com/)
 - [Kafka](https://kafka.apache.org/)
 - REST API
 - [Swagger](https://swagger.io/)
+- [Docker](https://www.docker.com)
 
 ## TODO
 
